@@ -44,6 +44,7 @@ public class MainMethod {
         System.out.println("Please choose an option.");
     }
 
+<<<<<<< HEAD
     public String getMaxiumumAndMinimum (int [] givenArray) {
 
         int min = 0;
@@ -67,4 +68,14 @@ public class MainMethod {
     }
 
 
+=======
+public static void getSumOfEvenOddIndexed(int[] array) {
+    int oddSum = 0;
+    int evenSum = 0;
+    for (int i = 0; i < array.length; i++)
+    {if (i%2 == 0) evenSum += array[i];
+    else oddSum += array[i];}
+    System.out.printf("%s%f\n%s%f", "Sum of even indices: ", evenSum, "Sum of odd indices: ", oddSum);
+}
+>>>>>>> origin/main
 }
