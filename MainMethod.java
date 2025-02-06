@@ -1,4 +1,3 @@
-package CS102HW;
 
 import java.util.Arrays;
 
@@ -9,7 +8,7 @@ public class MainMethod {
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter a positive integer to create an array.");
         int positiveInteger =  sc.nextInt(); //buradan methoda alıp metohoda array oluştur.
-        int [] numbers = new int[positiveInteger];
+        int [] numbers = createArray(positiveInteger);
 
         Integer answer = -1;
         menuPrint();
@@ -22,24 +21,35 @@ public class MainMethod {
 
                 case 2: //finds the average
 
-                diffsFromAverage(numbers);
+                
 
-                getAverage(numbers);
+                diffsFromAverage(numbers);
 
                     break;
 
                 case 3: //finds sum of even and odd indexes
                 getSumOfEvenOddIndexed(numbers);
                     break;
-                menuPrint();
+                
             }
+            menuPrint();
         }
         if (answer==4)
         {
             System.out.println("You have exited!");
         }
         
+        sc.close();
+    }
 
+    //Creates a random integer array at the size of given input
+    public static int[] createArray(int positiveInteger){
+        int numbers[] = new int[positiveInteger];
+        for(int i = 0 ; i < numbers.length; i++){
+            numbers[i] = (int) (Math.random() * 100) + 1;
+        }
+        return numbers;
+    
     }
 
     public static void menuPrint ()
@@ -58,7 +68,7 @@ public class MainMethod {
         for (int i = 0; i < array.length; i++)
         {if (i%2 == 0) evenSum += array[i];
         else oddSum += array[i];}
-        System.out.printf("%s%f\n%s%f", "Sum of even indices: ", evenSum, "Sum of odd indices: ", oddSum);
+        System.out.printf("%s%d\n%s%d\n", "Sum of even indices: ", evenSum, "Sum of odd indices: ", oddSum);
     }
 
     public static void diffsFromAverage(int[] arr)
@@ -78,13 +88,13 @@ public class MainMethod {
         {
             result[i] = arr[i] - average;
         }
-        
-        System.out.println(Arrays.toString(result));
+        System.out.println("The average of this array is " + average);
+        printArrayD(result);
     }
 
-    public String getMaxiumumAndMinimum (int [] givenArray) {
+    public static void getMaxiumumAndMinimum (int [] givenArray) {
 
-        int min = 0;
+        int min = 100;
 
         for (int index = 0; index < givenArray.length; index++) {
             if (min > givenArray[index]) {
@@ -100,18 +110,15 @@ public class MainMethod {
             }
         }
 
-        return "Min of this array is " + min + " and max of this array is " + max ;
+        System.out.println( "Min of this array is " + min + " and max of this array is " + max) ;
 
     }
 
+    public static void printArrayD(double [] array) {
+        for (int i = 0; i < array.length-1; i++)
+        System.out.printf("%.2f%s", array[i], ", ");
+        System.out.printf("%.2f\n", array[array.length-1]);
+    }
 
 
-public static void getSumOfEvenOddIndexed(int[] array) {
-    int oddSum = 0;
-    int evenSum = 0;
-    for (int i = 0; i < array.length; i++)
-    {if (i%2 == 0) evenSum += array[i];
-    else oddSum += array[i];}
-    System.out.printf("%s%f\n%s%f", "Sum of even indices: ", evenSum, "Sum of odd indices: ", oddSum);
-}
 }
