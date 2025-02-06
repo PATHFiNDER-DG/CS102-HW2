@@ -1,7 +1,5 @@
-
-import java.util.Arrays;
-
 import java.util.Scanner;
+
 public class MainMethod {
     public static void main (String args [])
     {
@@ -20,9 +18,6 @@ public class MainMethod {
                     break;
 
                 case 2: //finds the average
-
-                
-
                 diffsFromAverage(numbers);
 
                     break;
@@ -30,7 +25,6 @@ public class MainMethod {
                 case 3: //finds sum of even and odd indexes
                 getSumOfEvenOddIndexed(numbers);
                     break;
-                
             }
             menuPrint();
         }
@@ -119,6 +113,4 @@ public class MainMethod {
         System.out.printf("%.2f%s", array[i], ", ");
         System.out.printf("%.2f\n", array[array.length-1]);
     }
-
-
 }
