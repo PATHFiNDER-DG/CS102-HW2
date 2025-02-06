@@ -1,4 +1,4 @@
-
+public static void main(String[] args){
     //Creates a random integer array at the size of given input
     public static int[] createArray(int positiveInteger){
         int numbers[] = new int[positiveInteger];
