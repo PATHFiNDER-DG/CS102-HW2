@@ -1,4 +1,7 @@
 package CS102HW;
+
+import java.util.Arrays;
+
 import java.util.Scanner;
 public class MainMethod {
     public static void main (String args [])
@@ -18,7 +21,11 @@ public class MainMethod {
                     break;
 
                 case 2: //finds the average
+
+                diffsFromAverage(numbers);
+
                 getAverage(numbers);
+
                     break;
 
                 case 3: //finds sum of even and odd indexes
@@ -44,7 +51,37 @@ public class MainMethod {
         System.out.println("Please choose an option.");
     }
 
-<<<<<<< HEAD
+
+    public static void getSumOfEvenOddIndexed(int[] array) {
+        int oddSum = 0;
+        int evenSum = 0;
+        for (int i = 0; i < array.length; i++)
+        {if (i%2 == 0) evenSum += array[i];
+        else oddSum += array[i];}
+        System.out.printf("%s%f\n%s%f", "Sum of even indices: ", evenSum, "Sum of odd indices: ", oddSum);
+    }
+
+    public static void diffsFromAverage(int[] arr)
+    {
+        int sum = 0;
+        double average;
+        double[] result = new double[arr.length];
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            sum += arr[i];
+        }
+
+        average = 1.0 * sum / arr.length;
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            result[i] = arr[i] - average;
+        }
+        
+        System.out.println(Arrays.toString(result));
+    }
+
     public String getMaxiumumAndMinimum (int [] givenArray) {
 
         int min = 0;
@@ -68,7 +105,7 @@ public class MainMethod {
     }
 
 
-=======
+
 public static void getSumOfEvenOddIndexed(int[] array) {
     int oddSum = 0;
     int evenSum = 0;
@@ -77,5 +114,4 @@ public static void getSumOfEvenOddIndexed(int[] array) {
     else oddSum += array[i];}
     System.out.printf("%s%f\n%s%f", "Sum of even indices: ", evenSum, "Sum of odd indices: ", oddSum);
 }
->>>>>>> origin/main
 }
